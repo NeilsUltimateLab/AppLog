@@ -23,6 +23,25 @@ Output:
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 ```
 
+### With extra information
+```Swift
+func addItem(request: ItemRequest, completion: @escaping (Result<AppResponse<Int>, ResponseError>)->Void) {
+    apiProvider.request(.addItem(request)) { (result) in
+        switch result {
+        case .success(let response):
+            do {
+            ... try ...
+            } catch {
+                completion(.failure(.canNotParse))
+                AppLog.print(error, extraInfo: self.extraLogInfo(request: timeRequest))
+            }
+        case .failure(let error):
+            ...
+        }
+    }
+}
+```
+
 ### Present AppLogViewController
 ```Swift
 extension AppViewController {
@@ -36,7 +55,7 @@ extension AppViewController {
 
 Drag and Drop Folder to your project `AppLog`.
 
-Or Individual Files below:
+Or Individual Files:
 1) `AppLogViewController.swift`
 2) `AppLog.swift`
 3) `FileHandleOutputStream.swift`
