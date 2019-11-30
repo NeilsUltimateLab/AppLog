@@ -4,7 +4,7 @@ Printing Logs in File and present in viewController.
 ## Usage
 
 ```Swift
-AppLog("Hey error occured")
+AppLog.print("Hey error occured")
 ```
 
 Output:
@@ -22,3 +22,21 @@ Output:
 ---------------------------------
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 ```
+
+### Present AppLogViewController
+```Swift
+extension AppViewController {
+    func presentLogsVC() {
+        AppLogViewController.present(using: self)
+    }
+}
+```
+
+## Installation: 
+
+Drag and Drop Folder to your project `AppLog`.
+
+Or Individual Files below:
+1) `AppLogViewController.swift`
+2) `AppLog.swift`
+3) `FileHandleOutputStream.swift`
