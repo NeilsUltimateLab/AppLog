@@ -7,6 +7,7 @@ Printing Logs in File and present in viewController.
 AppLog("Hey error occured")
 ```
 
+Output:
 ```
 *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
 ⏰ Date: 2019-11-30 10:10:10 +0000
