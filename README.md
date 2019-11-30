@@ -33,7 +33,7 @@ func addItem(request: ItemRequest, completion: @escaping (Result<AppResponse<Int
             ... try ...
             } catch {
                 completion(.failure(.canNotParse))
-                AppLog.print(error, extraInfo: self.extraLogInfo(request: timeRequest))
+                AppLog.print(error, extraInfo: request))
             }
         case .failure(let error):
             ...
